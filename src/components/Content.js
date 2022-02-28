@@ -31,7 +31,7 @@ export default class Content extends React.Component {
   };
 
   deleteTask = (task) => {
-    this.setState(prevState => ({tasks: prevState.tasks.filter(item => item !== task)}));
+    this.setState(prevState => ({tasks: prevState.tasks.filter(item => item.title !== task.title)}));
   };
 
   render() {

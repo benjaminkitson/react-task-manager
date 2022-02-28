@@ -8,7 +8,7 @@ export default class Task extends React.Component {
 
   render() {
     return (
-      <div className="task">{this.props.task}<button className="button--deletetask" onClick={this.deleteTask}>Delete</button></div>
+      <div className="task">{this.props.task.title}<button className="button--deletetask" onClick={this.deleteTask}>Delete</button></div>
     );
   }
 }
