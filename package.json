@@ -1,0 +1,8 @@
+{
+  "name": "react-task-manager",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:benjaminkitson/react-task-manager.git",
+  "author": "Benjamin Kitson <benjaminkitson13@gmail.com>",
+  "license": "MIT"
+}
