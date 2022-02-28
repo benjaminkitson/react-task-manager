@@ -136,17 +136,18 @@ button:active {
   justify-content: flex-start;
   align-items: center;
   width: 95vw;
-  height: calc(100vh - 190px);
+  flex-grow: 1;
   overflow-y: scroll;
   background: white;
   box-shadow: 0px 0px 10px 3px rgba(86, 86, 86, 0.5) inset;
   padding: 40px;
+  border-radius: 7px;
 }
 
 .task {
   width: 80%;
   height: 100px;
-  border-radius: 3px;
+  border-radius: 7px;
   border: 1px solid rgba(197, 197, 197, 0.3);
   display: flex;
   align-items: center;
@@ -184,8 +185,6 @@ button:active {
   color: black;
   margin-left: 10px;
 }
-
-
 
 .cancel {
   height: 20px;
