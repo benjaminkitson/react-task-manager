@@ -11,35 +11,44 @@
   font-weight: 200;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 button {
   height: 50px;
   width: 100px;
   box-sizing: border-box;
   border-radius: 3px;
-  box-shadow: 3px 3px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 2px rgba(0, 0, 0, 0.2);
   transition: transform 0.1s, box-shadow 0.1s;
   border: none;
 }
 
 button:hover {
   cursor: pointer;
-  box-shadow: 4px 4px rgba(0, 0, 0, 0.4);
+  box-shadow: 3px 3px rgba(0, 0, 0, 0.4);
   transition: transform 0.1s, box-shadow 0.1s;
   transform: translateY(-1px);
 }
 
 button:active {
-  transform: translateY(3px);
-  box-shadow: none;
+  transform: translateY(2px);
+  box-shadow: 1px 1px rgba(0, 0, 0, 0.2);
   transition: transform 0.1s, box-shadow 0.2s;
   border-top: 4px solid rgba(0, 0, 0, 0);
 }
 
-body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+
 
 #header {
   height: 50px;
@@ -63,13 +72,6 @@ body {
   width: 100vw;
   background-color: rgba(0, 79, 158, 0.8);
   padding-bottom: 50px;
-}
-
-#login-partial, #signup-partial, .newtask-partial, #areyousure-partial {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 .popup-closed {
@@ -99,7 +101,7 @@ body {
   align-items: center;
 }
 
-#login-form > input, #signup-form > input, #newtask-form > input{
+#login-form > input, #signup-form > input, #newtask-form > input {
   margin: 20px;
   height: 30px;
   width: 200px;
@@ -134,10 +136,6 @@ body {
   transition: height 0.3s
 }
 
-.task:hover {
-  height: 100px;
-  transition: height 0.3s
-}
 
 .delete {
   width: 100px;
@@ -172,11 +170,6 @@ body {
   height: 20px;
 }
 
-.task:hover > .buttons {
-  opacity: 1;
-  transition: all 0.3s;
-  height: 40px;
-}
 
 .cancel {
   height: 20px;

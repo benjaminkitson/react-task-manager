@@ -6,7 +6,7 @@ import Popup from './Popup';
 export default class Content extends React.Component {
 
   state = {
-    tasks: ['task', 'task', 'task'],
+    tasks: [],
     isAddingTasks: false
   };
 
