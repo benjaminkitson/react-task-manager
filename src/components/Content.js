@@ -6,15 +6,24 @@ import Popup from './Popup';
 export default class Content extends React.Component {
 
   state = {
-    tasks: [{title: 'laundry', completed: true}],
+    tasks: [],
     isAddingTasks: false,
     isLoggedIn: true,
     isSigningUp: false,
   };
 
   componentDidMount() {
-    console.log('hello');
+    if (localStorage.getItem('tasks')) {
+      this.setState(() => ({tasks: JSON.parse(localStorage.getItem('tasks'))}));
+    } else {
+      localStorage.setItem('tasks', JSON.stringify([]));
+    }
   }
+
+  componentDidUpdate() {
+    localStorage.setItem('tasks', JSON.stringify(this.state.tasks));
+  }
+
 
   // These two could presumably be one method?
 
@@ -33,6 +42,7 @@ export default class Content extends React.Component {
   deleteTask = (task) => {
     this.setState(prevState => ({tasks: prevState.tasks.filter(item => item.title !== task.title)}));
   };
+
 
   render() {
     return (
