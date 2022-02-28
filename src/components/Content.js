@@ -13,12 +13,16 @@ export default class Content extends React.Component {
     console.log('hello');
   }
 
+  addTask = (task) => {
+    this.setState(prevState => ({tasks: prevState.tasks.concat(task)}));
+  };
+
   render() {
     return (
       <div className="content">
         <Header />
         <Tasks tasks={this.state.tasks}/>
-        <NewTask />
+        <NewTask addTask={this.addTask}/>
       </div>
     );
   }
