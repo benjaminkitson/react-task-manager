@@ -1,18 +1,18 @@
 {
   "name": "react-task-manager",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "bundle.js",
   "repository": "git@github.com:benjaminkitson/react-task-manager.git",
   "author": "Benjamin Kitson <benjaminkitson13@gmail.com>",
   "license": "MIT",
-  "devDependencies": {
-    "eslint": "^8.10.0",
-    "eslint-plugin-react": "^7.29.2"
-  },
   "scripts": {
     "server": "live-server public/",
     "build": "webpack",
     "dev-server": "webpack-dev-server"
+  },
+  "devDependencies": {
+    "eslint": "^8.10.0",
+    "eslint-plugin-react": "^7.29.2"
   },
   "dependencies": {
     "@babel/cli": "^7.17.6",
