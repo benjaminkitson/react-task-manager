@@ -2,6 +2,10 @@
   display: none;
 }
 
+html {
+  background:rgba(0, 79, 158, 0.8);
+}
+
 * {
   padding : 0;
   margin: 0;
@@ -36,14 +40,15 @@ body {
 }
 
 button {
-  height: 50px;
-  width: 100px;
+  height: 60px;
+  width: 150px;
+  font-size: 20px;
   box-sizing: border-box;
   border-radius: 3px;
   box-shadow: 2px 2px rgba(0, 0, 0, 0.2);
   transition: transform 0.1s, box-shadow 0.1s;
   border: none;
-  margin: 25px;
+  margin: 30px;
 }
 
 button:hover {
@@ -57,15 +62,13 @@ button:active {
   transform: translateY(2px);
   box-shadow: 1px 1px rgba(0, 0, 0, 0.2);
   transition: transform 0.1s, box-shadow 0.2s;
-  border-top: 4px solid rgba(0, 0, 0, 0);
 }
 
 
 
 #header {
-  height: 150px;
+  height: 100px;
   width: 100%;
-  padding: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -128,29 +131,37 @@ button:active {
 }
 
 #tasks {
-  margin: 20px;
-  width: 80vw;
-  height: calc(100vh - 250px)
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 95vw;
+  height: calc(100vh - 190px);
+  overflow-y: scroll;
+  background: white;
+  box-shadow: 0px 0px 10px 3px rgba(86, 86, 86, 0.5) inset;
+  padding: 40px;
 }
 
 .task {
-  width: 100%;
-  height: 60px;
+  width: 80%;
+  height: 100px;
   border-radius: 3px;
-  border: 1px solid rgba(197, 197, 197, 0.5);
+  border: 1px solid rgba(197, 197, 197, 0.3);
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 40px;
   margin-bottom: 20px;
-  box-shadow: 5px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 10px 3px rgba(83, 83, 83, 0.1);
   transition: height 0.3s
 }
 
 
-.delete {
+.button--deletetask {
+  font-size: 16px;
   width: 100px;
-  height: 100%;
+  height: 40px;
   background-color: rgb(158, 0, 0);
   color: white;
   margin-left: 10px;

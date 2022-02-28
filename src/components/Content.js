@@ -6,7 +6,7 @@ import Popup from './Popup';
 export default class Content extends React.Component {
 
   state = {
-    tasks: [],
+    tasks: [{title: 'laundry', completed: true}],
     isAddingTasks: false,
     isLoggedIn: true,
     isSigningUp: false,
@@ -27,14 +27,18 @@ export default class Content extends React.Component {
   };
 
   addTask = (task) => {
-    this.setState(prevState => ({tasks: prevState.tasks.concat(task)}));
+    this.setState(prevState => ({tasks: prevState.tasks.concat([{title: task, completed: false}])}));
+  };
+
+  deleteTask = (task) => {
+    this.setState(prevState => ({tasks: prevState.tasks.filter(item => item !== task)}));
   };
 
   render() {
     return (
       <div className="content">
         <Header />
-        <Tasks tasks={this.state.tasks}/>
+        <Tasks tasks={this.state.tasks} deleteTask={this.deleteTask}/>
         <Popup addTask={this.addTask} isOpen={this.state.isAddingTasks} isntAddingTasks={this.isntAddingTasks}/>
         <button onClick={this.isAddingTasks}>Add a task!</button>
       </div>
