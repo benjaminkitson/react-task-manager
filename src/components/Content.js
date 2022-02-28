@@ -1,17 +1,28 @@
 import React from 'react';
 import Header from './Header';
 import Tasks from './Tasks';
-import NewTask from './NewTask';
+import Popup from './Popup';
 
 export default class Content extends React.Component {
 
   state = {
     tasks: ['task', 'task', 'task'],
+    isAddingTasks: false
   };
 
   componentDidMount() {
     console.log('hello');
   }
+
+  // These two could presumably be one method?
+
+  isAddingTasks = () => {
+    this.setState(() => ({isAddingTasks: true}));
+  };
+
+  isntAddingTasks = () => {
+    this.setState(() => ({ isAddingTasks: false }));
+  };
 
   addTask = (task) => {
     this.setState(prevState => ({tasks: prevState.tasks.concat(task)}));
@@ -22,7 +33,8 @@ export default class Content extends React.Component {
       <div className="content">
         <Header />
         <Tasks tasks={this.state.tasks}/>
-        <NewTask addTask={this.addTask}/>
+        <Popup addTask={this.addTask} isOpen={this.state.isAddingTasks} isntAddingTasks={this.isntAddingTasks}/>
+        <button onClick={this.isAddingTasks}>Add a task!</button>
       </div>
     );
   }
