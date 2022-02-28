@@ -7,7 +7,9 @@ export default class Content extends React.Component {
 
   state = {
     tasks: [],
-    isAddingTasks: false
+    isAddingTasks: false,
+    isLoggedIn: true,
+    isSigningUp: false,
   };
 
   componentDidMount() {
