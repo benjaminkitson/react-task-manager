@@ -46,7 +46,7 @@ export default class Content extends React.Component {
   markAsCompleted = (task) => {
     const tasksCopy = this.state.tasks.slice();
     const index = tasksCopy.findIndex(item => item.title === task.title);
-    tasksCopy[index].completed = true;
+    tasksCopy[index].completed = !tasksCopy[index].completed;
     this.setState(() => ({tasks: tasksCopy}));
   };
 
