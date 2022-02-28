@@ -43,12 +43,19 @@ export default class Content extends React.Component {
     this.setState(prevState => ({tasks: prevState.tasks.filter(item => item.title !== task.title)}));
   };
 
+  markAsCompleted = (task) => {
+    const tasksCopy = this.state.tasks.slice();
+    const index = tasksCopy.findIndex(item => item.title === task.title);
+    tasksCopy[index].completed = true;
+    this.setState(() => ({tasks: tasksCopy}));
+  };
+
 
   render() {
     return (
       <div className="content">
         <Header />
-        <Tasks tasks={this.state.tasks} deleteTask={this.deleteTask}/>
+        <Tasks tasks={this.state.tasks} deleteTask={this.deleteTask} markAsCompleted={this.markAsCompleted}/>
         <Popup addTask={this.addTask} isOpen={this.state.isAddingTasks} isntAddingTasks={this.isntAddingTasks}/>
         <button onClick={this.isAddingTasks}>Add a task!</button>
       </div>
