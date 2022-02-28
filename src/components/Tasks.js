@@ -5,8 +5,8 @@ export default class Tasks extends React.Component {
 
   render() {
     return (
-      <div>
-        <Task />
+      <div id="tasks">
+        {this.props.tasks.map(task => <Task key={task} task={task}/>)}
       </div>
     );
   }

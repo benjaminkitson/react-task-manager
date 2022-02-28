@@ -1,9 +1,9 @@
 import React from 'react';
 
-function OneTask() {
+function Task(props) {
   return (
-    <div>Hello</div>
+    <div className="task">{props.task}</div>
   );
 }
 
-export default OneTask;
+export default Task;

@@ -1,3 +1,7 @@
+#webpack-dev-server-client-overlay {
+  display: none;
+}
+
 * {
   padding : 0;
   margin: 0;
@@ -33,7 +37,7 @@ body {
   align-items: center;
 }
 
-#greeting {
+#header {
   height: 50px;
   width: 100%;
   padding: 40px;
@@ -43,9 +47,11 @@ body {
   margin-top: 30px;
 }
 
-#popup {
+.popup {
   position: absolute;
-  display: none;
+  top: 0;
+  left: 0;
+  display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1;
@@ -55,18 +61,18 @@ body {
   padding-bottom: 50px;
 }
 
-#login-partial, #signup-partial, #newtask-partial, #areyousure-partial {
+#login-partial, #signup-partial, .newtask-partial, #areyousure-partial {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-#signup-partial, #newtask-partial, #areyousure-partial {
-  display: none;
+#signup-partial, .newtask-partial, #areyousure-partial {
+  /* display: none; */
 }
 
-#popup-contents {
+.popup-contents {
   border: 1px solid black;
   background: white;
   border-radius: 3px;
